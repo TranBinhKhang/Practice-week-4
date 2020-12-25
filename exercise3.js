@@ -8,7 +8,6 @@ class MyForm extends React.Component {
     this.state = {
       value1: '',
       value2: '',
-      value3: '',
     };
     this.myChangeHandler = this.myChangeHandler.bind(this);
     this.result = this.result.bind(this);
@@ -22,15 +21,12 @@ class MyForm extends React.Component {
   }
 
   result(event) {
-    var delta = this.state.value2 * this.state.value2 - 4 * this.state.value1 * this.state.value3;
-    if (delta < 0) {
-      alert('this phuong trinh has no nghiem')
+    if (this.state.value1 == 'mrkhang' || this.state.value2 == '12345')
+    {
+      alert('Logged in successful');
     }
-    if (delta == 0) {
-      alert('this phuong trinh has nghiem ' + (-this.state.value2 / 2 * this.state.value1))
-    }
-    if (delta > 0) {
-      alert('this phuong trinh has nghiem ' + ((-this.state.value2 + Math.sqrt(delta)) / 2 * this.state.value1))
+    else {
+      alert('Nice try hacker')
     }
     event.preventDefault();
   }
@@ -40,29 +36,21 @@ class MyForm extends React.Component {
 
     return (
       <form onSubmit={this.result}>
-        <p>Enter value 1:</p>
+        <p>Enter Username:</p>
         <input
           type='text'
           name='value1'
           value={this.state.value1}
           onChange={this.myChangeHandler}
         />
-        <p>Enter value 2:</p>
+        <p>Enter Password:</p>
         <input
           type='text'
           name='value2'
           value={this.state.value2}
           onChange={this.myChangeHandler}
         />
-        <p>Enter value 3:</p>
-        <input
-          type='text'
-          name='value3'
-          value={this.state.value3}
-          onChange={this.myChangeHandler}
-        />
         <p name="result">The delta is {this.state.value2 * this.state.value2 - 4 * this.state.value1 * this.state.value3}</p>
-        <a href="https://www.w3schools.com">Visit W3Schools.com!</a>
         <input type="submit" value="Submit" />
       </form>
     );
