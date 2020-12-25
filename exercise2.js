@@ -32,28 +32,27 @@ class MyForm extends React.Component {
 
     return (
       <form onSubmit={this.result}>
-        <p>Enter value 1:</p>
+        <p>Enter money:</p>
         <input
           type='text'
           name='value1'
           value={this.state.value1}
           onChange={this.myChangeHandler}
         />
-        <p>Enter value 2:</p>
+        <p>Enter month:</p>
         <input
           type='text'
           name='value2'
           value={this.state.value2}
           onChange={this.myChangeHandler}
         />
-        <p>Enter value 3:</p>
+        <p>Enter interest rate (yearly):</p>
         <input
           type='text'
           name='value3'
           value={this.state.value3}
           onChange={this.myChangeHandler}
         />
-        <p name="result">The delta is {this.state.value2 * this.state.value2 - 4 * this.state.value1 * this.state.value3}</p>
 <br></br>
         <input type="submit" value="Submit" />
       </form>
