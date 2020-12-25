@@ -1,6 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
 
 class MyForm extends React.Component {
   constructor(props) {
