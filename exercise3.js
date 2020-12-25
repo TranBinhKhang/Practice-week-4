@@ -22,7 +22,7 @@ class MyForm extends React.Component {
   }
 
   result(event) {
-    if (this.state.value1 == 'mrkhang' || this.state.value2 == '12345')
+    if (this.state.value1 == 'mrkhang' && this.state.value2 == '12345')
     {
       alert('Logged in successful');
     }
@@ -51,7 +51,7 @@ class MyForm extends React.Component {
           value={this.state.value2}
           onChange={this.myChangeHandler}
         />
-        <p name="result">The delta is {this.state.value2 * this.state.value2 - 4 * this.state.value1 * this.state.value3}</p>
+        <br></br><br></br>
         <input type="submit" value="Submit" />
       </form>
     );
